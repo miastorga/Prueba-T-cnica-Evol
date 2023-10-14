@@ -7,9 +7,8 @@ export const responseHandler = (req, res) => {
     })
   }
 
-  // exito
   if (res.locals.data) {
-    const { data, modelName, message, statusCode = 200 } = res.locals.data // Aquí estamos usando destructuring con un valor por defecto
+    const { data, modelName, message, statusCode = 200 } = res.locals.data
     return res.status(statusCode).json({
       status: statusCode,
       [modelName]: data,

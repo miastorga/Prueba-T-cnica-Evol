@@ -10,4 +10,4 @@ app.use(morgan('dev'))
 app.use(express.json())
 app.use(router)
 
-export default app  // Exporta app
+export default app  
