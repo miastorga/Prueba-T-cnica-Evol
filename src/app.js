@@ -10,5 +10,4 @@ app.use(morgan('dev'))
 app.use(express.json())
 app.use(router)
 
-app.listen(3000)
-console.log('Server on port 3000')
+export default app  // Exporta app
