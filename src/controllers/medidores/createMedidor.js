@@ -2,7 +2,9 @@ import pool from '../../pg.js'
 
 export const createMedidor = async (req, res, next) => {
   const { rut, nombre, codigo, fechaCreacion } = req.body
-  console.log(fechaCreacion)
+  console.log('rut', rut)
+
+  console.log('fecha creacion', fechaCreacion)
 
   try {
     const existingMedidor = await pool.query('SELECT * FROM medidores WHERE codigo = $1', [codigo])

@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, } from 'react-router-dom'
 import './App.css'
 import ListClients from './components/ListClients'
 import NavBar from './components/Navbar'
@@ -13,9 +13,9 @@ function App() {
       <NavBar />
       <Container>
         <Routes>
-          <Route path='/clientes' element={<ListClients />} />
-          <Route path='/clientes/add' element={<ClientsForm />} />
-          <Route path='/clientes/edit/:rut' element={<ClientsForm />} />
+          <Route path='/' element={<ListClients />} />
+          <Route path='/add' element={<ClientsForm />} />
+          <Route path='/edit/:rut' element={<ClientsForm />} />
           <Route path='/medidores' element={<ListMedidores />} />
           <Route path='/medidores/add' element={<MedidorForm />} />
           <Route path='/medidores/edit/:codigo' element={<MedidorForm />} />

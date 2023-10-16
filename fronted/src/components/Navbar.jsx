@@ -13,7 +13,7 @@ export default function Navbar() {
                 <img src="../../src/assets/evol.png" width={150} alt="" srcSet="" />
               </a>
             </Typography>
-            <Button onClick={() => navigate('/clientes')}>
+            <Button onClick={() => navigate('/')}>
               clientes
             </Button>
             <Button onClick={() => navigate('/medidores')}>

@@ -57,14 +57,14 @@ export default function ListClients() {
         <Typography style={{ margin: '0rem 0rem', fontSize: '1rem' }}>
           {message.message}
         </Typography>
-        <Button style={{ margin: '1rem 0rem', fontSize: '1rem' }} onClick={() => navigate('/clientes/add', { state: { mode: 'agregar' } })}>
+        <Button style={{ margin: '1rem 0rem', fontSize: '1rem' }} onClick={() => navigate('/add', { state: { mode: 'agregar' } })}>
           + Agregar clientes
         </Button>
       </div>
       <DataTable
         columns={columns}
         data={clientes}
-        onEdit={(cliente) => navigate(`/clientes/edit/${cliente.rut}`, { state: { mode: 'editar' } })}
+        onEdit={(cliente) => navigate(`/edit/${cliente.rut}`, { state: { mode: 'editar' } })}
         onDelete={handlerDelete}
       />
     </div>

@@ -15,9 +15,9 @@ export const validateMedidores = (req, res, next) => {
     return res.status(400).json({ status: 404, message: 'El formato del RUT es inválido. Formato 12.345.678-9/k' })
   }
 
-  if (!isValidDate(fechaCreacion)) {
-    return res.status(400).json({ status: 404, message: 'Formato fecha no valido. Debe ser YYYY-MM-DD' })
-  }
+  // if (!isValidDate(fechaCreacion)) {
+  //   return res.status(400).json({ status: 404, message: 'Formato fecha no valido. Debe ser YYYY-MM-DD' })
+  // }
   next()
 }
 

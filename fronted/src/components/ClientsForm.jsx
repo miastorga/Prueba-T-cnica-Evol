@@ -33,7 +33,7 @@ export default function ClientsForm() {
 
       if (data.status === 200) {
         console.log('actualizoa')
-        navigate('/clientes')
+        navigate('/')
       } else if (data.status === 404) {
         console.log('no actualizado')
         setMessage(data)
@@ -57,7 +57,7 @@ export default function ClientsForm() {
           nombre: '',
           direccion: ''
         })
-        navigate('/clientes')
+        navigate('/')
       } else if (data.status === 404) {
         setMessage(data)
       }
