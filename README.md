@@ -29,17 +29,6 @@ Si decide crear una API de servicios puede utilizar Nodejs o Java con Springboot
 Deberá incluir la documentación necesaria para configuración/ejecución o scripts de la solución.
 Puede utilizar las librerías que estime necesarias para el desarrollo de la solución.
 
-Deberá crear un repositorio público en github con el código fuente y enviar al correo [edison.delgado@evol.energy](mailto:edison.delgado@evol.energy) con copia a [carolina.duarte@evol.energy](mailto: carolina.duarte@evol.energy) el enlace con el asunto "Prueba Técnica Evol".
-
-**_No requerido, pero deseable:_**
-
-- Documentación, de API e interfaz.
-- Pruebas unitarias y E2E.
-- Mobile friendly.
-- Uso de alguna librería de estilos (Bootstrap 5, Tailwind o similar).
-- Manejo de errores.
-- Modularización de componentes
-
 ## **Documentación de Ejecución de la Configuración del Proyecto**
 
 ### **Introducción**
