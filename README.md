@@ -1,24 +1,22 @@
----
+## **Problemática**
 
-## **Problematica**
-
-En Evol Services se necesita crear una interfaz gráfica que permita listar, crear, actualizar y eliminar datos de medidores y de nuestros clientes. Un cliente puede tener de 1 hasta 3 medidores  asignados.
+En Evol Services se necesita crear una interfaz gráfica que permita listar, crear, actualizar y eliminar datos de medidores y de nuestros clientes. Un cliente puede tener de 1 hasta 3 medidores asignados.
 
 Considere necesario ingresar los siguientes campos o atributos para cada medidor:
 
-***Campos Requeridos:***
+**_Campos Requeridos:_**
 
 - código: texto alfanumérico único
 - nombre: texto
 - fecha de creación: fecha
 
-***Campos Opcionales:***
+**_Campos Opcionales:_**
 
 - descripción: texto con descripción del medidor
 
 Para los datos de clientes se debe ingresar:
 
-***Campos Requeridos***
+**_Campos Requeridos_**
 
 - RUT: texto con formato RUT
 - nombre: texto
@@ -33,7 +31,7 @@ Puede utilizar las librerías que estime necesarias para el desarrollo de la sol
 
 Deberá crear un repositorio público en github con el código fuente y enviar al correo [edison.delgado@evol.energy](mailto:edison.delgado@evol.energy) con copia a [carolina.duarte@evol.energy](mailto: carolina.duarte@evol.energy) el enlace con el asunto "Prueba Técnica Evol".
 
-***No requerido, pero deseable:***
+**_No requerido, pero deseable:_**
 
 - Documentación, de API e interfaz.
 - Pruebas unitarias y E2E.
@@ -41,6 +39,7 @@ Deberá crear un repositorio público en github con el código fuente y enviar a
 - Uso de alguna librería de estilos (Bootstrap 5, Tailwind o similar).
 - Manejo de errores.
 - Modularización de componentes
+
 ## **Documentación de Ejecución de la Configuración del Proyecto**
 
 ### **Introducción**
@@ -52,7 +51,7 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
 - Tener instalado Docker.
 - Tener instalado Node.js.
 - Acceso a la línea de comandos o terminal.
-  
+
 ### **Instrucciones**
 
 1. **Iniciar el Contenedor PostgreSQL en Docker**:
@@ -76,14 +75,14 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
    Dentro de tu proyecto, tienes un archivo que utiliza el paquete `pg` para conectarse a PostgreSQL. La configuración es:
 
    ```javascript
-   const { Pool } = require('pg');
+   const { Pool } = require("pg");
 
    const pool = new Pool({
-     user: 'postgres',
-     password: 'mysecretpassword',
-     host: 'localhost',
+     user: "postgres",
+     password: "mysecretpassword",
+     host: "localhost",
      port: 5432,
-     database: 'evol'
+     database: "evol",
    });
    ```
 
@@ -92,7 +91,6 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
 ### **Solución de Problemas**
 
 - **Error de conexión**: Asegúrate de que el contenedor Docker esté en ejecución (`docker ps` para verificar) y que los detalles de conexión en tu archivo coincidan con los del contenedor.
-  
 - **Error de dependencias**: Asegúrate de tener todas las dependencias necesarias instaladas con `npm install`.
 
 ---
