@@ -1,6 +1,46 @@
-
 ---
 
+## **Problematica**
+
+En Evol Services se necesita crear una interfaz gráfica que permita listar, crear, actualizar y eliminar datos de medidores y de nuestros clientes. Un cliente puede tener de 1 hasta 3 medidores  asignados.
+
+Considere necesario ingresar los siguientes campos o atributos para cada medidor:
+
+***Campos Requeridos:***
+
+- código: texto alfanumérico único
+- nombre: texto
+- fecha de creación: fecha
+
+***Campos Opcionales:***
+
+- descripción: texto con descripción del medidor
+
+Para los datos de clientes se debe ingresar:
+
+***Campos Requeridos***
+
+- RUT: texto con formato RUT
+- nombre: texto
+- dirección : texto
+
+Considere distribuir la arquitectura de este requerimento según estime conveniente.
+Para almacenar los datos utilice una base de datos Postgres.
+Para la interfaz es importante usar React.
+Si decide crear una API de servicios puede utilizar Nodejs o Java con Springboot.
+Deberá incluir la documentación necesaria para configuración/ejecución o scripts de la solución.
+Puede utilizar las librerías que estime necesarias para el desarrollo de la solución.
+
+Deberá crear un repositorio público en github con el código fuente y enviar al correo [edison.delgado@evol.energy](mailto:edison.delgado@evol.energy) con copia a [carolina.duarte@evol.energy](mailto: carolina.duarte@evol.energy) el enlace con el asunto "Prueba Técnica Evol".
+
+***No requerido, pero deseable:***
+
+- Documentación, de API e interfaz.
+- Pruebas unitarias y E2E.
+- Mobile friendly.
+- Uso de alguna librería de estilos (Bootstrap 5, Tailwind o similar).
+- Manejo de errores.
+- Modularización de componentes
 ## **Documentación de Ejecución de la Configuración del Proyecto**
 
 ### **Introducción**
@@ -55,15 +95,18 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
   
 - **Error de dependencias**: Asegúrate de tener todas las dependencias necesarias instaladas con `npm install`.
 
---- 
+---
+
 ### **Introducción**
- Aplicación de gestión que permite a los usuarios agregar y gestionar información sobre clientes y medidores. La interfaz proporciona un formulario para la entrada de datos y una tabla para visualizar, editar y eliminar los registros existentes.
+
+Aplicación de gestión que permite a los usuarios agregar y gestionar información sobre clientes y medidores. La interfaz proporciona un formulario para la entrada de datos y una tabla para visualizar, editar y eliminar los registros existentes.
 
 ### **Funcionalidades**
 
 #### **Clientes**:
 
 1. **Agregar Cliente**:
+
    - **RUT**: Campo para introducir el número de identificación del cliente.
    - **Nombre**: Campo para el nombre completo del cliente.
    - **Dirección**: Dirección de residencia o negocio del cliente.
@@ -77,6 +120,7 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
 #### **Medidores**:
 
 1. **Agregar Medidor**:
+
    - **Código**: Identificador único para el medidor.
    - **Nombre**: Descripción o modelo del medidor.
    - **Fecha de Creación**: Fecha en que se añadió el medidor.
@@ -91,18 +135,21 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
 ### **Tecnologías Utilizadas**:
 
 #### **Frontend**:
-   - **React**: Biblioteca JavaScript para construir interfaces de usuario.
-   - **@mui/material**: Librería de diseño de Material-UI para React.
-   - **@emotion/react y @emotion/styled**: Bibliotecas de estilos CSS-in-JS.
-   - **react-router-dom**: Biblioteca para gestionar rutas y navegación en la aplicación React.
+
+- **React**: Biblioteca JavaScript para construir interfaces de usuario.
+- **@mui/material**: Librería de diseño de Material-UI para React.
+- **@emotion/react y @emotion/styled**: Bibliotecas de estilos CSS-in-JS.
+- **react-router-dom**: Biblioteca para gestionar rutas y navegación en la aplicación React.
 
 #### **Backend**:
-   - **Express**: Marco de aplicación web para Node.js.
-   - **cors**: Middleware de Express para habilitar CORS.
-   - **morgan**: Middleware de registro de solicitudes HTTP para Node.js.
-   - **pg**: Cliente de Node.js para PostgreSQL.
+
+- **Express**: Marco de aplicación web para Node.js.
+- **cors**: Middleware de Express para habilitar CORS.
+- **morgan**: Middleware de registro de solicitudes HTTP para Node.js.
+- **pg**: Cliente de Node.js para PostgreSQL.
 
 ### **Iniciar la Aplicación**:
+
 1. **Frontend**: Navegue al directorio del frontend y ejecute `npm run dev` para iniciar el servidor de desarrollo React.
 2. **Backend**: Navegue al directorio del backend y ejecute `npm run dev` para iniciar el servidor Express.
 
@@ -115,8 +162,8 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
 - **Ruta**: `/`
 - **Método**: `POST`
 - **Descripción**: Crea un nuevo cliente.
-  
 - **Body**:
+
   ```json
   {
     "rut": "12345678-9",
@@ -126,6 +173,7 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
   ```
 
 - **Respuesta esperada**:
+
   ```json
   {
     "statusCode": 201,
@@ -145,6 +193,7 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
 - **Descripción**: Elimina un cliente por RUT.
 
 - **Respuesta esperada**:
+
   ```json
   {
     "modelName": "cliente",
@@ -162,15 +211,15 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
 - **Ruta**: `/`
 - **Método**: `GET`
 - **Descripción**: Devuelve todos los clientes registrados.
-  
 - **Respuesta esperada**:
   ```json
   {
-    "data": [ /* Array con todos los clientes */ ],
+    "data": [
+      /* Array con todos los clientes */
+    ],
     "modelName": "clientes"
   }
   ```
-  
 - **Errores**:
   - `500`: Algo salió mal al obtener todos los clientes.
 
@@ -181,9 +230,12 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
 - **Descripción**: Devuelve un cliente específico por RUT.
 
 - **Respuesta esperada**:
+
   ```json
   {
-    "data": { /* Datos del cliente específico */ },
+    "data": {
+      /* Datos del cliente específico */
+    },
     "modelName": "cliente"
   }
   ```
@@ -199,6 +251,7 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
 - **Descripción**: Actualiza un cliente existente por RUT. Puedes actualizar el RUT, nombre y dirección.
 
 - **Body**:
+
   ```json
   {
     "rut": "NuevoRut",
@@ -208,9 +261,12 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
   ```
 
 - **Respuesta esperada**:
+
   ```json
   {
-    "cliente": { /* Datos del cliente actualizado */ },
+    "cliente": {
+      /* Datos del cliente actualizado */
+    },
     "modelName": "cliente",
     "message": "Cliente actualizado con éxito"
   }
@@ -222,6 +278,7 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
   - `500`: Error al actualizar cliente.
 
 ---
+
 ## Rutas y Métodos de Medidores
 
 ### **1. Crear Medidor**
@@ -230,7 +287,7 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
 
 - **Método:** POST
 - **Ruta:** `/api/medidores`
-- **Body:** 
+- **Body:**
   - `rut`: RUT del cliente al que se asignará el medidor.
   - `nombre`: Nombre del medidor.
   - `codigo`: Código único del medidor.
@@ -242,7 +299,7 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
 
 - **Método:** DELETE
 - **Ruta:** `/api/medidores/:codigo`
-- **Parámetros URL:** 
+- **Parámetros URL:**
   - `codigo`: Código único del medidor.
 
 ### **3. Obtener Todos los Medidores**
@@ -258,7 +315,7 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
 
 - **Método:** GET
 - **Ruta:** `/api/medidores/:codigo`
-- **Parámetros URL:** 
+- **Parámetros URL:**
   - `codigo`: Código único del medidor.
 
 ### **5. Actualizar Medidor**
@@ -267,15 +324,16 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar y eje
 
 - **Método:** PUT
 - **Ruta:** `/api/medidores/:codigo`
-- **Parámetros URL:** 
+- **Parámetros URL:**
   - `codigo`: Código antiguo del medidor (en caso de que el código se vaya a cambiar).
-- **Body:** 
+- **Body:**
   - `codigo`: Nuevo código del medidor (opcional).
   - `nombre`: Nuevo nombre del medidor.
   - `fechaCreacion`: Nueva fecha de creación del medidor.
   - `rut`: RUT del cliente asociado.
 
 ---
+
 - No se puede crear un medidor con un código que ya exista.
 - Un cliente no puede tener más de tres medidores asociados.
 - No se puede actualizar un medidor a un código que ya esté en uso.

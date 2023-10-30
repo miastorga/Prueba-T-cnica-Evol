@@ -20,12 +20,6 @@ export const updateClient = async (req, res, next) => {
       client = await pool.query('UPDATE USUARIOS SET nombre = $1, direccion = $2 WHERE rut = $3 RETURNING *', [nombre, direccion, oldRut])
     }
 
-    if (newRut && oldRut !== newRut) {
-      client = await pool.query('UPDATE USUARIOS SET rut = $1, nombre = $2, direccion = $3 WHERE rut = $4 RETURNING *', [newRut, nombre, direccion, oldRut])
-    } else {
-      client = await pool.query('UPDATE USUARIOS SET nombre = $1, direccion = $2 WHERE rut = $3 RETURNING *', [nombre, direccion, oldRut])
-    }
-
     if (!client.rows.length) {
       res.locals.error = { statusCode: 404, message: 'Cliente no encontrado.' }
     } else {

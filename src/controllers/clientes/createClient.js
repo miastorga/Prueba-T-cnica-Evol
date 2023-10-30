@@ -24,4 +24,3 @@ export const createClient = async (req, res, next) => {
     next()
   }
 }
-
