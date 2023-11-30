@@ -94,9 +94,9 @@ export default function ClientsForm() {
           </Typography>
           <CardContent>
             <form onSubmit={handlerSubmit}>
-              <TextField id="" label="Rut" name='rut' value={form.rut} variant="outlined" sx={{ display: 'block', margin: '.5rem 0' }} onChange={handlerChange} />
-              <TextField id="" label="Nombre" name='nombre' value={form.nombre} variant="outlined" sx={{ display: 'block', margin: '.5rem 0' }} onChange={handlerChange} />
-              <TextField id="" label="Direccion" name='direccion' value={form.direccion} variant="outlined" sx={{ display: 'block', margin: '.5rem 0' }} onChange={handlerChange} />
+              <TextField id="" label="Rut" name='rut' value={form.rut} variant="outlined" sx={{ display: 'block', margin: '.5rem 0' }} onChange={handlerChange} autoComplete="off" />
+              <TextField id="" label="Nombre" name='nombre' value={form.nombre} variant="outlined" sx={{ display: 'block', margin: '.5rem 0' }} onChange={handlerChange} autoComplete="off" />
+              <TextField id="" label="Direccion" name='direccion' value={form.direccion} variant="outlined" sx={{ display: 'block', margin: '.5rem 0' }} onChange={handlerChange} autoComplete="off" />
               <Button type="submit">
                 Guardar
               </Button>

@@ -17,10 +17,6 @@ export default function MedidorForm() {
   })
   const [editing, setEditing] = useState(false)
   const [message, setMessage] = useState('')
-  // const formatDate = isoDate => {
-  //   const dateObj = new Date(isoDate)
-  //   return `${dateObj.getFullYear()}-${String(dateObj.getMonth() + 1).padStart(2, '0')}-${String(dateObj.getDate()).padStart(2, '0')}`
-  // }
 
   const handlerSubmit = async e => {
     e.preventDefault()
@@ -115,11 +111,11 @@ export default function MedidorForm() {
           </Typography>
           <CardContent>
             <form onSubmit={handlerSubmit}>
-              <TextField id="" value={form.codigo} name="codigo" label="Codigo" variant="outlined" onChange={handlerChange} sx={{ display: 'block', margin: '.5rem 0' }} />
-              <TextField id="" value={form.nombre} name="nombre" label="Nombre" variant="outlined" onChange={handlerChange} sx={{ display: 'block', margin: '.5rem 0' }} />
-              <TextField id="" value={form.fechacreacion} name="fechacreacion" InputLabelProps={{ shrink: true, }} label="Fecha creacion" placeholder="AAAA-MM-DD"
+              <TextField id="" value={form.codigo} name="codigo" label="Codigo" variant="outlined" onChange={handlerChange} sx={{ display: 'block', margin: '.5rem 0' }} autoComplete="off" />
+              <TextField id="" value={form.nombre} name="nombre" label="Nombre" variant="outlined" onChange={handlerChange} sx={{ display: 'block', margin: '.5rem 0' }} autoComplete="off" />
+              <TextField id="" autoComplete="off" value={form.fechacreacion} name="fechacreacion" InputLabelProps={{ shrink: true, }} label="Fecha creacion" placeholder="AAAA-MM-DD"
                 variant="outlined" type="date" onChange={handlerChange} sx={{ display: 'block', margin: '.5rem 0' }} />
-              <TextField id="" value={form.rut} name="rut" label="Rut" variant="outlined" onChange={handlerChange} sx={{ display: 'block', margin: '.5rem 0' }} />
+              <TextField id="" value={form.rut} name="rut" label="Rut" variant="outlined" onChange={handlerChange} sx={{ display: 'block', margin: '.5rem 0' }} autoComplete="off" />
               <Button type="submit">
                 Guardar
               </Button>
